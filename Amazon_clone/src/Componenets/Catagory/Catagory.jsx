@@ -9,8 +9,12 @@ function Catagory() {
         <section className={style.catagory_container}>
             {
                 catagoryinfo.map((infos)=>(
+                
                     <CatagoryCard data={infos}/>
+                    
+                    
                 ))
+               
 
 
             }
