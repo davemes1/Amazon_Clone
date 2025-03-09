@@ -6,8 +6,9 @@
 }
 .login img{
     width: 100px;
-    margin: 30px;
+    margin: 30px auto;
     object-fit: contain;
+    border: none;
 }
 .LoginContainer{
     width: 350px;
@@ -17,9 +18,9 @@
     padding: 20px;
     border-radius: 10px;
 }
-.LoginContainer h1{
+.LoginContainer h3{
     font-size: 20px;
-    font-weight: 500;
+    font-weight: bold;
     margin: 20px 0px;
 }
 .LoginContainer form{
@@ -43,10 +44,10 @@
     border-radius: 5px;
 }
 .LoginContainer form input:focus{
-    ouline:2px solid skyblue
+    outline:2px solid skyblue;
 }
 
-.login_signInButton{
+.login_signInBtn{
     border: none;
     background-color: #f0c14b;
     border-radius: 5px;
@@ -56,22 +57,22 @@
     cursor: pointer;
 }
 
-.login_signInButton:hover{
+.login_signInBtn:hover{
     background-color: var(--primary-shade);
 }
 .LoginContainer p{
     padding:10px 0px;
     font-size: 14px;
 }
-.login_registerButton{
+.login_registerBtn{
     border: none;
-    background-color: #f0c14b;
+    /* background-color: #f0c14b; */
     border-radius: 5px;
     width: 100%;
     height: 30px;
     margin-top: 10px;
     cursor: pointer;
 }
-.login_registerButton:hover{
-    background-color: var(--primary-shade);
+.login_registerBtn:hover{
+    background-color: lightgray;
 }

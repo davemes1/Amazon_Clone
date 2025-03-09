@@ -1,21 +1,37 @@
-import { useState } from 'react'
-
+import { useContext,useEffect } from 'react'
 import './App.css'
-import Header from './Componenets/Header/Header'
-import CarouselEffect from './Componenets/Carousel/Carousel'
-import Catagory from './Componenets/Catagory/Catagory'
-import Product from './Componenets/Product/Product'
-import Layout from './Componenets/Layout/Layout'
-import Landing from './Pages/Landing/Landing'
 import Routing from './Router'
+import { DataContext } from './Componenets/DataProvide/DataProvider'
+import { Type } from './Utility/action.type'
+import { auth } from './Utility/firebase'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [{user},dispatch] = useContext(DataContext);
+ 
+  useEffect(()=>{
+    auth.onAuthStateChanged((authUser) => {
+      if (authUser){
+        // console.log(authUser);
+        
+        dispatch({
+          type:Type.SET_USER,
+          user:authUser
+        });
+      }else{
+        dispatch({
+          type:Type.SET_USER,
+          user:null,
+
+        })
+      }
+    })
+
+  },[])
 
   return (
     <>
       <div>
-        {/* <Header/> */}
+       
         <Routing/>
         
 

@@ -65,7 +65,7 @@ function Cart() {
                         <IoIosArrowDown size={30} />
                       </button>
                     </div>
-                    <hr />
+                    
                   </section>
                 );
               })
