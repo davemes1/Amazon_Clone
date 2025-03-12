@@ -10,12 +10,13 @@ import { ClipLoader } from "react-spinners";
 import { db } from "../../Utility/firebase";
 import {doc,setDoc,collection} from 'firebase/firestore';
 import{useNavigate} from'react-router-dom';
+import { Type } from "../../Utility/action.type";
 
 
 
 
 function Payment() {
-  const [{ basket, user }] = useContext(DataContext);
+  const [{ basket, user },dispatch] = useContext(DataContext);
   // console.log(user);
 
   const totalItem = basket?.reduce((amount, item) => {
@@ -76,6 +77,9 @@ function Payment() {
         amount: paymentIntent.amount,
         created: paymentIntent.created,
       });
+      // empty backet
+      
+      dispatch({type:Type.EMPTY_BASKET});
 
       // await db
       // .collection("users")

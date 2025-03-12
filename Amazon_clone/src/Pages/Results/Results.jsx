@@ -15,7 +15,7 @@ function Results() {
   
 
   useEffect(()=>{
-    setIsLoading(true)
+    setIsLoading(true);
 
     axios.get(`${productUrl}/products/category/${categoryName}`)
     .then((res) => {
