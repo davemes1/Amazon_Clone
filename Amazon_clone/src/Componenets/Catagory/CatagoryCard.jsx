@@ -8,7 +8,7 @@ function CatagoryCard({data}) {
   return (
     <div className={style.catagory}>
 
-        <Link to={`/category/${data.category}`} >
+        <Link  to={`/category/${data.category}`} >
             <h3>{data.category}</h3>
             <span>
                 <h2>{data?.title}</h2>
